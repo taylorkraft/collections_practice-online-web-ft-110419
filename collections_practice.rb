@@ -19,11 +19,9 @@ def reverse_array(array)
 end
 
 def kesha_maker(array)
-  array.each {|num, index|
-  num[2] = "$"
-    while num[index] == index[2]
+  array.each do |item|
+    item[2] = "$"
   end
-  }
 end
 
 def find_a(array)
@@ -35,9 +33,11 @@ def sum_array(array)
 end
 
 def add_s(array)
-  array.each_with_index.collect {|num, index| 
-  num + "s"
-    while num != index[2]
+  array.collect do |word|
+    if array[1] == word
+      word
+    else
+      word + "s"
+    end
   end
-  }
 end
